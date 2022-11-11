@@ -19,6 +19,15 @@ jobs:
       with:
         python-version: "3.10"
 
+    - name: Cache pip
+      uses: actions/cache@2
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+        restore-keys: |
+            ${{ runner.os }}-pip-
+            ${{ runner.os }}-
+
     - name: Install dependencies
       shell: bash
       run: |
@@ -29,7 +38,7 @@ jobs:
       run: |
         cd docs
         make html
-        sphinx-build -D language=en -b html ./ bulid/html
+        
 
     - name: clean up files
       run: rm -r docs/_build/doctrees/
