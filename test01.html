@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-cn" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>快速上手 &mdash; 锦浪云web v1 文档</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="开发主题" href="test02.html" />
+    <link rel="prev" title="介绍" href="intro.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> 锦浪云web
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">介绍</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">快速上手</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test02.html">开发主题</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">锦浪云web</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">快速上手</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/test01.rst.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>快速上手<a class="headerlink" href="#id1" title="此标题的永久链接"></a></h1>
+<p>warning 前提条件
+VuePress 需要 [Node.js](<a class="reference external" href="https://nodejs.org/en/">https://nodejs.org/en/</a>) &gt;= 8.6</p>
+<p>本文会帮助你从头搭建一个简单的 VuePress 文档。如果你想在一个现有项目中使用 VuePress 管理文档，从步骤 3 开始。</p>
+<ol class="arabic">
+<li><p>创建并进入一个新目录</p>
+<p>mkdir vuepress-starter &amp;&amp; cd vuepress-starter</p>
+</li>
+<li><p>使用你喜欢的包管理器进行初始化</p>
+<p>yarn init # npm init</p>
+</li>
+<li><p>将 VuePress 安装为本地依赖</p>
+<p>我们已经不再推荐全局安装 VuePress</p>
+<p>yarn add -D vuepress # npm install -D vuepress</p>
+<p>warning 注意
+如果你的现有项目依赖了 webpack 3.x，我们推荐使用 [Yarn](<a class="reference external" href="https://classic.yarnpkg.com/zh-Hans/">https://classic.yarnpkg.com/zh-Hans/</a>) 而不是 npm 来安装 VuePress。因为在这种情形下，npm 会生成错误的依赖树。</p>
+</li>
+<li><p>创建你的第一篇文档</p>
+<p>bash
+mkdir docs &amp;&amp; echo ‘# Hello VuePress’ &gt; docs/README.md</p>
+</li>
+<li><p>在 <cite>package.json</cite> 中添加一些 [scripts](<a class="reference external" href="https://classic.yarnpkg.com/zh-Hans/docs/package-json#toc-scripts">https://classic.yarnpkg.com/zh-Hans/docs/package-json#toc-scripts</a>)</p>
+<p>这一步骤是可选的，但我们推荐你完成它。在下文中，我们会默认这些 scripts 已经被添加。</p>
+</li>
+<li><p>在本地启动服务器</p>
+<p>yarn docs:dev # npm run docs:dev</p>
+<p>VuePress 会在 [<a class="reference external" href="http://localhost:8080](http://localhost:8080">http://localhost:8080](http://localhost:8080</a>) 启动一个热重载的开发服务器。</p>
+</li>
+</ol>
+<p>现在，你应该已经有了一个简单可用的 VuePress 文档。接下来，了解一下推荐的 [目录结构](directory-structure.html) 和 VuePress 中的 [基本配置](basic-config.html)。</p>
+<p>等你了解完上文介绍的基础概念，再去学习一下如何使用 [静态资源](assets.html)，[Markdown 拓展](markdown.html) 和 [在 Markdown 中使用 Vue](using-vue.html) 来丰富你的文档内容。</p>
+<p>当你的文档逐渐成型的时候，不要忘记 VuePress 的 [多语言支持](i18n.html) 并了解一下如何将你的文档 [部署](deploy.html) 到任意静态文件服务器上。</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="intro.html" class="btn btn-neutral float-left" title="介绍" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="test02.html" class="btn btn-neutral float-right" title="开发主题" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, an.</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
