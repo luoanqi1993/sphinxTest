@@ -25,9 +25,6 @@ jobs:
         pip install --upgrade pip
         pip install -r docs/requirements.txt        
 
-    - name: clean up files
-      run: rm -r docs/_build/doctrees/
-
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       if: github.ref == 'refs/heads/main'
