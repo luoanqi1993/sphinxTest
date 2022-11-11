@@ -29,7 +29,7 @@ jobs:
       run: |
         cd docs
         make html
-        sphinx-build -D language=en -b html ./ _bulid/html/en
+        sphinx-build -D language=en -b html ./ bulid/html
 
     - name: clean up files
       run: rm -r docs/_build/doctrees/
