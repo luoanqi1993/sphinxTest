@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 
-project = '锦浪云web'
+project = '锦浪云web文档'
 copyright = '2022, an'
 author = 'an'
 release = 'v1'
