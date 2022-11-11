@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="zh-cn" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>开发主题 &mdash; 锦浪云web v1 文档</title>
+  <title>开发主题 &mdash; 锦浪云web文档 v1 文档</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -13,7 +14,10 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/translations.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
@@ -25,7 +29,7 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> 锦浪云web
+            <a href="index.html" class="icon icon-home"> 锦浪云web文档
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -56,7 +60,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">锦浪云web</a>
+          <a href="index.html">锦浪云web文档</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -74,47 +78,47 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="id1">
-<h1>开发主题<a class="headerlink" href="#id1" title="永久链接至标题"></a></h1>
+  <section id="id1">
+<h1>开发主题<a class="headerlink" href="#id1" title="此标题的永久链接"></a></h1>
 <p>想要书写一个主题，首先在你文档根目录创建一个 <cite>.vuepress/theme</cite> 目录，接着创建一个 <cite>Layout.vue</cite> 文件：</p>
 <p>到这里，就像开发一个普通的 Vue 应用一样。如何组织你的主题，这完全取决于你。</p>
-<div class="section" id="id2">
-<h2>获取渲染内容<a class="headerlink" href="#id2" title="永久链接至标题"></a></h2>
+<section id="id2">
+<h2>获取渲染内容<a class="headerlink" href="#id2" title="此标题的永久链接"></a></h2>
 <p>当前的 <cite>.md</cite> 文件渲染的内容，可以作为一个独特的全局组件 <cite>&lt;Content/&gt;</cite> 来使用，你可能想要它显示在页面中的某个地方。一个最简单的主题，可以是一个唯一的 <cite>Layout.vue</cite> 组件，并包含以下内容：</p>
-</div>
-<div class="section" id="id3">
-<h2>内容摘抄<a class="headerlink" href="#id3" title="永久链接至标题"></a></h2>
+</section>
+<section id="id3">
+<h2>内容摘抄<a class="headerlink" href="#id3" title="此标题的永久链接"></a></h2>
 <p>如果一个 markdown 文件中有一个 <cite>&lt;!– more –&gt;</cite> 注释，则该注释之前的内容会被抓取并暴露在 <cite>$page.excerpt</cite> 属性中。如果你在开发一个博客主题，你可以用这个属性来渲染一个带摘抄的文章列表。</p>
-</div>
-<div class="section" id="id4">
-<h2>目录结构<a class="headerlink" href="#id4" title="永久链接至标题"></a></h2>
+</section>
+<section id="id4">
+<h2>目录结构<a class="headerlink" href="#id4" title="此标题的永久链接"></a></h2>
 <p>随着需求的变化，只有一个布局组件 <cite>Layout.vue</cite> 可能还不够，你可能想要定义更多的布局组件用于不同的页面，你可能还想要自定义一个[调色板](../config/README.md#palette-styl)，甚至应用一些插件。</p>
 <p>那么是时候重新组织你的主题了！一个约定的主题的目录结构如下：</p>
-</div>
-<div class="section" id="id5">
-<h2>布局组件<a class="headerlink" href="#id5" title="永久链接至标题"></a></h2>
+</section>
+<section id="id5">
+<h2>布局组件<a class="headerlink" href="#id5" title="此标题的永久链接"></a></h2>
 <p>假设你的主题 <cite>layouts</cite> 目录如下：</p>
 <p>然后，所有的页面将会默认使用 <cite>Layout.vue</cite> 作为布局组件，对于那些匹配不到的路由将会使用 <cite>404.vue</cite>。</p>
 <p>如果你想要在某一个页面中使用 <cite>AnotherLayout.vue</cite> 作为布局组件，那么你只需要更新这个页面的 <cite>frontmatter</cite>：</p>
-</div>
-<div class="section" id="id6">
-<h2>使用插件<a class="headerlink" href="#id6" title="永久链接至标题"></a></h2>
+</section>
+<section id="id6">
+<h2>使用插件<a class="headerlink" href="#id6" title="此标题的永久链接"></a></h2>
 <p>你可以通过主题的配置文件 <cite>themePath/index.js</cite> 来给主题应用一些插件：</p>
-</div>
-<div class="section" id="id7">
-<h2>网站和页面的元数据<a class="headerlink" href="#id7" title="永久链接至标题"></a></h2>
+</section>
+<section id="id7">
+<h2>网站和页面的元数据<a class="headerlink" href="#id7" title="此标题的永久链接"></a></h2>
 <p><cite>Layout</cite> 组件将会对每一个文档目录下的 <cite>.md</cite> 执行一次，同时，整个网站以及特定页面的元数据将分别暴露为 <cite>this.$site</cite> 和 <cite>this.$page</cite> 属性，它们将会被注入到每一个当前应用的组件中。</p>
 <p>这是你现在看到的这个网站的 <cite>$site</cite> 的值：</p>
 <p><cite>title</cite>, <cite>description</cite> 和 <cite>base</cite> 会从 <cite>.vuepress/config.js</cite> 中对应的的字段复制过来，而 <cite>pages</cite> 是一个包含了每个页面元数据对象的数据，包括它的路径、页面标题（明确地通过 [YAML front matter](../guide/markdown.md#front-matter) 指定，或者通过该页面的第一个标题取到），以及所有源文件中的 <cite>YAML front matter</cite> 的数据。</p>
 <p>下面的这个对象是你正在看的这个页面的 <cite>$page</cite> 的值：</p>
 <p>如果用户在 <cite>.vuepress/config.js</cite> 配置了 <cite>themeConfig</cite>，你将可以通过 <cite>$site.themeConfig</cite> 访问到它。如此一来，你可以通过它来对用户开放一些自定义主题的配置 —— 比如指定目录或者页面的顺序，你也可以结合 <cite>$site.pages</cite> 来动态地构建导航链接。</p>
 <p>最后，别忘了，作为 Vue Router API 的一部分，<cite>this.$route</cite> 和 <cite>this.$router</cite> 同样可以使用。</p>
-</div>
-<div class="section" id="id8">
-<h2>应用配置<a class="headerlink" href="#id8" title="永久链接至标题"></a></h2>
+</section>
+<section id="id8">
+<h2>应用配置<a class="headerlink" href="#id8" title="此标题的永久链接"></a></h2>
 <p>自定义主题也可以通过主题根目录下的 <cite>enhanceApp.js</cite> 文件来对 VuePress 应用进行拓展配置。这个文件应当 <cite>export default</cite> 一个钩子函数，并接受一个包含了一些应用级别属性的对象作为参数。你可以使用这个钩子来安装一些附加的 Vue 插件、注册全局组件，或者增加额外的路由钩子等：</p>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
